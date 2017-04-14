@@ -21,29 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="4EW-Y3-6yp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundPhoto.png" translatesAutoresizingMaskIntoConstraints="NO" id="4EW-Y3-6yp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdT-iz-9Gc">
-                                <rect key="frame" x="157" y="390" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="dP2-DM-Bpc"/>
-                                    <constraint firstAttribute="width" constant="60" id="nRf-eT-9Aw"/>
-                                </constraints>
-                                <state key="normal" image="googleButton.png"/>
-                                <connections>
-                                    <action selector="googleLoginDidTapped:" destination="4jv-uQ-FQ5" eventType="touchUpInside" id="q3i-bM-JLl"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="guq-l0-4eN">
-                                <rect key="frame" x="67" y="321" width="240" height="21"/>
+                                <rect key="frame" x="67" y="323" width="240" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="3d9-0U-7a7"/>
-                                    <constraint firstAttribute="width" constant="240" id="oSe-sO-Mae"/>
+                                    <constraint firstAttribute="width" constant="240" id="n8s-UT-wr1"/>
+                                    <constraint firstAttribute="height" constant="21" id="tgM-iP-Vq9"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxo-kp-7LH">
-                                <rect key="frame" x="108.5" y="244" width="158" height="34"/>
+                                <rect key="frame" x="67" y="239" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ihd-9m-T1D"/>
+                                    <constraint firstAttribute="width" constant="240" id="k0y-fD-F4M"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Login Anonymously">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,19 +46,27 @@
                                     <action selector="loginAnonymouslyDidTapped:" destination="4jv-uQ-FQ5" eventType="touchUpInside" id="zDa-yE-39F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdT-iz-9Gc">
+                                <rect key="frame" x="157" y="391" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="IDy-7p-ioi"/>
+                                    <constraint firstAttribute="height" constant="60" id="qEq-5B-f4U"/>
+                                </constraints>
+                                <state key="normal" image="googleButton.png"/>
+                                <connections>
+                                    <action selector="googleLoginDidTapped:" destination="4jv-uQ-FQ5" eventType="touchUpInside" id="q3i-bM-JLl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="guq-l0-4eN" firstAttribute="centerX" secondItem="56B-5H-ERT" secondAttribute="centerX" id="8Jz-ld-IzD"/>
-                            <constraint firstItem="gdT-iz-9Gc" firstAttribute="top" secondItem="guq-l0-4eN" secondAttribute="bottom" constant="48" id="H8a-j4-z9h"/>
-                            <constraint firstItem="Wxo-kp-7LH" firstAttribute="centerX" secondItem="56B-5H-ERT" secondAttribute="centerX" id="JM2-Cl-GYF"/>
-                            <constraint firstItem="4EW-Y3-6yp" firstAttribute="top" secondItem="56B-5H-ERT" secondAttribute="top" id="O5z-M2-dJ1"/>
-                            <constraint firstItem="Ryk-yT-NOe" firstAttribute="top" secondItem="gdT-iz-9Gc" secondAttribute="bottom" constant="217" id="atd-xU-3bF"/>
-                            <constraint firstItem="gdT-iz-9Gc" firstAttribute="centerX" secondItem="56B-5H-ERT" secondAttribute="centerX" id="em2-NI-zxq"/>
-                            <constraint firstItem="guq-l0-4eN" firstAttribute="top" secondItem="Wxo-kp-7LH" secondAttribute="bottom" constant="43" id="lAg-RO-bh4"/>
-                            <constraint firstItem="4EW-Y3-6yp" firstAttribute="leading" secondItem="56B-5H-ERT" secondAttribute="leading" id="oOf-6W-iHZ"/>
-                            <constraint firstItem="Ryk-yT-NOe" firstAttribute="top" secondItem="4EW-Y3-6yp" secondAttribute="bottom" id="p6T-fq-nhK"/>
-                            <constraint firstAttribute="trailing" secondItem="4EW-Y3-6yp" secondAttribute="trailing" id="rnD-yk-VwB"/>
+                            <constraint firstItem="gdT-iz-9Gc" firstAttribute="top" secondItem="guq-l0-4eN" secondAttribute="bottom" constant="47" id="4Yb-yP-Jsj"/>
+                            <constraint firstItem="guq-l0-4eN" firstAttribute="centerX" secondItem="56B-5H-ERT" secondAttribute="centerX" id="6Y2-Zs-xpa"/>
+                            <constraint firstItem="Ryk-yT-NOe" firstAttribute="top" secondItem="gdT-iz-9Gc" secondAttribute="bottom" constant="216" id="GMo-Oq-dp7"/>
+                            <constraint firstItem="gdT-iz-9Gc" firstAttribute="centerX" secondItem="56B-5H-ERT" secondAttribute="centerX" id="O7B-Y3-pJW"/>
+                            <constraint firstItem="guq-l0-4eN" firstAttribute="top" secondItem="Wxo-kp-7LH" secondAttribute="bottom" constant="50" id="Vzx-MC-KmW"/>
+                            <constraint firstItem="gdT-iz-9Gc" firstAttribute="top" secondItem="guq-l0-4eN" secondAttribute="bottom" constant="47" id="YQ4-lg-tsC"/>
+                            <constraint firstItem="Wxo-kp-7LH" firstAttribute="centerX" secondItem="56B-5H-ERT" secondAttribute="centerX" id="jqk-KR-Tw1"/>
                         </constraints>
                     </view>
                     <connections>
