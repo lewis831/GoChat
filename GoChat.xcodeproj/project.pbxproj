@@ -13,6 +13,11 @@
 		C3623F891EA0512B0030E496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3623F871EA0512B0030E496 /* LaunchScreen.storyboard */; };
 		C3623FB11EA052880030E496 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3623FB01EA052880030E496 /* LoginViewController.swift */; };
 		C3623FB31EA0529C0030E496 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3623FB21EA0529C0030E496 /* ChatViewController.swift */; };
+		C3623FBA1EA064CF0030E496 /* backgroundPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = C3623FB51EA064CF0030E496 /* backgroundPhoto.png */; };
+		C3623FBB1EA064CF0030E496 /* dummyUser.png in Resources */ = {isa = PBXBuildFile; fileRef = C3623FB61EA064CF0030E496 /* dummyUser.png */; };
+		C3623FBC1EA064CF0030E496 /* googleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C3623FB71EA064CF0030E496 /* googleButton.png */; };
+		C3623FBD1EA064CF0030E496 /* OrLine.png in Resources */ = {isa = PBXBuildFile; fileRef = C3623FB81EA064CF0030E496 /* OrLine.png */; };
+		C3623FBE1EA064CF0030E496 /* profileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = C3623FB91EA064CF0030E496 /* profileImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,11 @@
 		C3623F9A1EA0512B0030E496 /* GoChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3623FB01EA052880030E496 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3623FB21EA0529C0030E496 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		C3623FB51EA064CF0030E496 /* backgroundPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPhoto.png; sourceTree = "<group>"; };
+		C3623FB61EA064CF0030E496 /* dummyUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dummyUser.png; sourceTree = "<group>"; };
+		C3623FB71EA064CF0030E496 /* googleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleButton.png; sourceTree = "<group>"; };
+		C3623FB81EA064CF0030E496 /* OrLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrLine.png; sourceTree = "<group>"; };
+		C3623FB91EA064CF0030E496 /* profileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +104,25 @@
 				C3623F7E1EA0512B0030E496 /* AppDelegate.swift */,
 				C3623FB01EA052880030E496 /* LoginViewController.swift */,
 				C3623FB21EA0529C0030E496 /* ChatViewController.swift */,
+				C3623FB41EA064CF0030E496 /* Resources-GoChat */,
 				C3623F821EA0512B0030E496 /* Main.storyboard */,
 				C3623F851EA0512B0030E496 /* Assets.xcassets */,
 				C3623F871EA0512B0030E496 /* LaunchScreen.storyboard */,
 				C3623F8A1EA0512B0030E496 /* Info.plist */,
 			);
 			path = GoChat;
+			sourceTree = "<group>";
+		};
+		C3623FB41EA064CF0030E496 /* Resources-GoChat */ = {
+			isa = PBXGroup;
+			children = (
+				C3623FB51EA064CF0030E496 /* backgroundPhoto.png */,
+				C3623FB61EA064CF0030E496 /* dummyUser.png */,
+				C3623FB71EA064CF0030E496 /* googleButton.png */,
+				C3623FB81EA064CF0030E496 /* OrLine.png */,
+				C3623FB91EA064CF0030E496 /* profileImage.png */,
+			);
+			path = "Resources-GoChat";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +235,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3623FBA1EA064CF0030E496 /* backgroundPhoto.png in Resources */,
 				C3623F891EA0512B0030E496 /* LaunchScreen.storyboard in Resources */,
+				C3623FBC1EA064CF0030E496 /* googleButton.png in Resources */,
 				C3623F861EA0512B0030E496 /* Assets.xcassets in Resources */,
 				C3623F841EA0512B0030E496 /* Main.storyboard in Resources */,
+				C3623FBB1EA064CF0030E496 /* dummyUser.png in Resources */,
+				C3623FBD1EA064CF0030E496 /* OrLine.png in Resources */,
+				C3623FBE1EA064CF0030E496 /* profileImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

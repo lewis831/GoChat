@@ -10,15 +10,30 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var anonymousButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //anonymousButton:
+        //set border color and width
+        anonymousButton.layer.borderWidth = 2.0
+        anonymousButton.layer.borderColor = UIColor.white.cgColor
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func loginAnonymouslyDidTapped(_ sender: Any) {
+        print("login anonymously")
+    }
+    
+    @IBAction func googleLoginDidTapped(_ sender: Any) {
+        print("google login did tapped")
     }
     
 
