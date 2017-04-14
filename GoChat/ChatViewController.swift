@@ -21,6 +21,23 @@ class ChatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logoutDidTapped(_ sender: Any) {
+         //Important note of what this code does: Anonymously log user out and switch view to login page
+        
+        //Create a main storyboard instance
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        //From main storyboard instantiate a navigation controller
+        //To connect this code go to Main.storyboard -> LoginViewController -> identity inspector -> Storyboard ID -> enter value: "LoginVC"
+        let LogInVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+        
+        //Get the app delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //Set LoginIn View Controller as root view controller
+        appDelegate.window?.rootViewController = LogInVC
+
+    }
 
     /*
     // MARK: - Navigation

@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="rd8-xX-bnQ">
             <objects>
-                <viewController id="4jv-uQ-FQ5" customClass="LoginViewController" customModule="GoChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="4jv-uQ-FQ5" customClass="LoginViewController" customModule="GoChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SxT-JM-nuW"/>
                         <viewControllerLayoutGuide type="bottom" id="Ryk-yT-NOe"/>
@@ -90,10 +90,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fGn-8O-BRt">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="JO4-w4-3M8">
+                            <connections>
+                                <action selector="logoutDidTapped:" destination="kUd-A9-tu3" id="7Wn-Bu-I1I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uud-Ff-EXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="-140"/>
+            <point key="canvasLocation" x="1538.4000000000001" y="-140.77961019490255"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eFX-GI-O8V">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationVC" automaticallyAdjustsScrollViewInsets="NO" id="Uwo-gP-psN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Fu-q7-ruc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kUd-A9-tu3" kind="relationship" relationship="rootViewController" id="hDY-wp-1p1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehh-A9-wEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="599.20000000000005" y="-140.77961019490255"/>
         </scene>
     </scenes>
     <resources>
