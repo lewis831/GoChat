@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3623F7F1EA0512B0030E496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3623F7E1EA0512B0030E496 /* AppDelegate.swift */; };
+		C3623F841EA0512B0030E496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3623F821EA0512B0030E496 /* Main.storyboard */; };
+		C3623F861EA0512B0030E496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3623F851EA0512B0030E496 /* Assets.xcassets */; };
+		C3623F891EA0512B0030E496 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3623F871EA0512B0030E496 /* LaunchScreen.storyboard */; };
+		C3623FB11EA052880030E496 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3623FB01EA052880030E496 /* LoginViewController.swift */; };
+		C3623FB31EA0529C0030E496 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3623FB21EA0529C0030E496 /* ChatViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3623F901EA0512B0030E496 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3623F731EA0512B0030E496 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3623F7A1EA0512B0030E496;
+			remoteInfo = GoChat;
+		};
+		C3623F9B1EA0512B0030E496 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3623F731EA0512B0030E496 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3623F7A1EA0512B0030E496;
+			remoteInfo = GoChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3623F7B1EA0512B0030E496 /* GoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3623F7E1EA0512B0030E496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C3623F831EA0512B0030E496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3623F851EA0512B0030E496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C3623F881EA0512B0030E496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C3623F8A1EA0512B0030E496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3623F8F1EA0512B0030E496 /* GoChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3623F9A1EA0512B0030E496 /* GoChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3623FB01EA052880030E496 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C3623FB21EA0529C0030E496 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3623F781EA0512B0030E496 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3623F8C1EA0512B0030E496 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3623F971EA0512B0030E496 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3623F721EA0512B0030E496 = {
+			isa = PBXGroup;
+			children = (
+				C3623F7D1EA0512B0030E496 /* GoChat */,
+				C3623F7C1EA0512B0030E496 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3623F7C1EA0512B0030E496 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3623F7B1EA0512B0030E496 /* GoChat.app */,
+				C3623F8F1EA0512B0030E496 /* GoChatTests.xctest */,
+				C3623F9A1EA0512B0030E496 /* GoChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3623F7D1EA0512B0030E496 /* GoChat */ = {
+			isa = PBXGroup;
+			children = (
+				C3623F7E1EA0512B0030E496 /* AppDelegate.swift */,
+				C3623FB01EA052880030E496 /* LoginViewController.swift */,
+				C3623FB21EA0529C0030E496 /* ChatViewController.swift */,
+				C3623F821EA0512B0030E496 /* Main.storyboard */,
+				C3623F851EA0512B0030E496 /* Assets.xcassets */,
+				C3623F871EA0512B0030E496 /* LaunchScreen.storyboard */,
+				C3623F8A1EA0512B0030E496 /* Info.plist */,
+			);
+			path = GoChat;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3623F7A1EA0512B0030E496 /* GoChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3623FA31EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChat" */;
+			buildPhases = (
+				C3623F771EA0512B0030E496 /* Sources */,
+				C3623F781EA0512B0030E496 /* Frameworks */,
+				C3623F791EA0512B0030E496 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoChat;
+			productName = GoChat;
+			productReference = C3623F7B1EA0512B0030E496 /* GoChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3623F8E1EA0512B0030E496 /* GoChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3623FA61EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChatTests" */;
+			buildPhases = (
+				C3623F8B1EA0512B0030E496 /* Sources */,
+				C3623F8C1EA0512B0030E496 /* Frameworks */,
+				C3623F8D1EA0512B0030E496 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3623F911EA0512B0030E496 /* PBXTargetDependency */,
+			);
+			name = GoChatTests;
+			productName = GoChatTests;
+			productReference = C3623F8F1EA0512B0030E496 /* GoChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C3623F991EA0512B0030E496 /* GoChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3623FA91EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChatUITests" */;
+			buildPhases = (
+				C3623F961EA0512B0030E496 /* Sources */,
+				C3623F971EA0512B0030E496 /* Frameworks */,
+				C3623F981EA0512B0030E496 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3623F9C1EA0512B0030E496 /* PBXTargetDependency */,
+			);
+			name = GoChatUITests;
+			productName = GoChatUITests;
+			productReference = C3623F9A1EA0512B0030E496 /* GoChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3623F731EA0512B0030E496 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Lewis Rashe";
+				TargetAttributes = {
+					C3623F7A1EA0512B0030E496 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = XE3TRFK3S3;
+						ProvisioningStyle = Automatic;
+					};
+					C3623F8E1EA0512B0030E496 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = XE3TRFK3S3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C3623F7A1EA0512B0030E496;
+					};
+					C3623F991EA0512B0030E496 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = XE3TRFK3S3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C3623F7A1EA0512B0030E496;
+					};
+				};
+			};
+			buildConfigurationList = C3623F761EA0512B0030E496 /* Build configuration list for PBXProject "GoChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3623F721EA0512B0030E496;
+			productRefGroup = C3623F7C1EA0512B0030E496 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3623F7A1EA0512B0030E496 /* GoChat */,
+				C3623F8E1EA0512B0030E496 /* GoChatTests */,
+				C3623F991EA0512B0030E496 /* GoChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3623F791EA0512B0030E496 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3623F891EA0512B0030E496 /* LaunchScreen.storyboard in Resources */,
+				C3623F861EA0512B0030E496 /* Assets.xcassets in Resources */,
+				C3623F841EA0512B0030E496 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3623F8D1EA0512B0030E496 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3623F981EA0512B0030E496 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3623F771EA0512B0030E496 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3623FB11EA052880030E496 /* LoginViewController.swift in Sources */,
+				C3623FB31EA0529C0030E496 /* ChatViewController.swift in Sources */,
+				C3623F7F1EA0512B0030E496 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3623F8B1EA0512B0030E496 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3623F961EA0512B0030E496 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3623F911EA0512B0030E496 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3623F7A1EA0512B0030E496 /* GoChat */;
+			targetProxy = C3623F901EA0512B0030E496 /* PBXContainerItemProxy */;
+		};
+		C3623F9C1EA0512B0030E496 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3623F7A1EA0512B0030E496 /* GoChat */;
+			targetProxy = C3623F9B1EA0512B0030E496 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3623F821EA0512B0030E496 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3623F831EA0512B0030E496 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C3623F871EA0512B0030E496 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3623F881EA0512B0030E496 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3623FA11EA0512B0030E496 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C3623FA21EA0512B0030E496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3623FA41EA0512B0030E496 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XE3TRFK3S3;
+				INFOPLIST_FILE = GoChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = App.GoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C3623FA51EA0512B0030E496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XE3TRFK3S3;
+				INFOPLIST_FILE = GoChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = App.GoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C3623FA71EA0512B0030E496 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XE3TRFK3S3;
+				INFOPLIST_FILE = GoChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = App.GoChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoChat.app/GoChat";
+			};
+			name = Debug;
+		};
+		C3623FA81EA0512B0030E496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XE3TRFK3S3;
+				INFOPLIST_FILE = GoChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = App.GoChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoChat.app/GoChat";
+			};
+			name = Release;
+		};
+		C3623FAA1EA0512B0030E496 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XE3TRFK3S3;
+				INFOPLIST_FILE = GoChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = App.GoChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GoChat;
+			};
+			name = Debug;
+		};
+		C3623FAB1EA0512B0030E496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = XE3TRFK3S3;
+				INFOPLIST_FILE = GoChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = App.GoChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GoChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3623F761EA0512B0030E496 /* Build configuration list for PBXProject "GoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3623FA11EA0512B0030E496 /* Debug */,
+				C3623FA21EA0512B0030E496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3623FA31EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3623FA41EA0512B0030E496 /* Debug */,
+				C3623FA51EA0512B0030E496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3623FA61EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3623FA71EA0512B0030E496 /* Debug */,
+				C3623FA81EA0512B0030E496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3623FA91EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3623FAA1EA0512B0030E496 /* Debug */,
+				C3623FAB1EA0512B0030E496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3623F731EA0512B0030E496 /* Project object */;
+}
