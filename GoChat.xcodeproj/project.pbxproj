@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A7410C46565483DFD2FC0507 /* Pods_GoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0F2A0AF8E806326E90A2E1 /* Pods_GoChat.framework */; };
+		C33A6DA71EA2CE0C00F191F8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A6DA61EA2CE0C00F191F8 /* Helper.swift */; };
+		C33A6DA91EA2D0CF00F191F8 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33A6DA81EA2D0CF00F191F8 /* AdSupport.framework */; };
 		C3623F7F1EA0512B0030E496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3623F7E1EA0512B0030E496 /* AppDelegate.swift */; };
 		C3623F841EA0512B0030E496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3623F821EA0512B0030E496 /* Main.storyboard */; };
 		C3623F861EA0512B0030E496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3623F851EA0512B0030E496 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		549C8A02349890EC8D25798A /* Pods-GoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoChat/Pods-GoChat.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0F2A0AF8E806326E90A2E1 /* Pods_GoChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33A6DA61EA2CE0C00F191F8 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		C33A6DA81EA2D0CF00F191F8 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C3623F7B1EA0512B0030E496 /* GoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3623F7E1EA0512B0030E496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3623F831EA0512B0030E496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33A6DA91EA2D0CF00F191F8 /* AdSupport.framework in Frameworks */,
 				A7410C46565483DFD2FC0507 /* Pods_GoChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +95,7 @@
 		637CB998543DF173AECDEB8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C33A6DA81EA2D0CF00F191F8 /* AdSupport.framework */,
 				BF0F2A0AF8E806326E90A2E1 /* Pods_GoChat.framework */,
 			);
 			name = Frameworks;
@@ -120,6 +126,7 @@
 			children = (
 				C3623F7E1EA0512B0030E496 /* AppDelegate.swift */,
 				C3623FB01EA052880030E496 /* LoginViewController.swift */,
+				C33A6DA61EA2CE0C00F191F8 /* Helper.swift */,
 				C3623FB21EA0529C0030E496 /* ChatViewController.swift */,
 				C3623FB41EA064CF0030E496 /* Resources-GoChat */,
 				C3623F821EA0512B0030E496 /* Main.storyboard */,
@@ -349,6 +356,7 @@
 				C3623FB11EA052880030E496 /* LoginViewController.swift in Sources */,
 				C3623FB31EA0529C0030E496 /* ChatViewController.swift in Sources */,
 				C3623F7F1EA0512B0030E496 /* AppDelegate.swift in Sources */,
+				C33A6DA71EA2CE0C00F191F8 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
