@@ -501,6 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XE3TRFK3S3;
 				INFOPLIST_FILE = GoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = App.GoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XE3TRFK3S3;
 				INFOPLIST_FILE = GoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = App.GoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -599,6 +601,7 @@
 				C3623FA51EA0512B0030E496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3623FA61EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChatTests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +610,7 @@
 				C3623FA81EA0512B0030E496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3623FA91EA0512B0030E496 /* Build configuration list for PBXNativeTarget "GoChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -615,6 +619,7 @@
 				C3623FAB1EA0512B0030E496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

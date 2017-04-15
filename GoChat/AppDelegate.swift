@@ -8,6 +8,7 @@
 
 //To connect Firebase when your app starts up, add the initialization code below to your main AppDelegate class.
 //<Firabase code snippet start>
+//Firebase authentication fix: http://stackoverflow.com/questions/39058470/firapp-configure-crashing-app
 import UIKit
 import Firebase
 
@@ -16,10 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    override init() {
+        FIRApp.configure()
+    }
+    
     private func application(application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?)
         -> Bool {
-            FIRApp.configure()
             return true
     }
 //<Firebase code snippet end>
