@@ -11,6 +11,7 @@
 //Firebase authentication fix: http://stackoverflow.com/questions/39058470/firapp-configure-crashing-app
 import UIKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
     }
 //<Firebase code snippet end>
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        print(url)
+        print(options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String as Any)
+        
+        //Fix to iOS GoogleSignIn error http://stackoverflow.com/questions/34123890/ios-google-sign-in-error
+        //Code contained here only runs on iOS 9.0 or above - Start
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation] as? String)
+        //End
+    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -22,7 +22,7 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func logoutDidTapped(_ sender: Any) {
-         //Important note of what this code does: Anonymously log user out and switch view to login page
+        //Important note of what this code does: Anonymously log user out and switch view to login page
         
         //Create a main storyboard instance
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
