@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import JSQMessagesViewController
 
-class ChatViewController: UIViewController {
+//Changed UI view from UIViewController to JSQMessagesViewController
+class ChatViewController: JSQMessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoChat/Helper.swift"
-            timestampString = "514008565.499523"
+            timestampString = "514010635.454853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "logInWithGoogle(authentication:)"
             landmarkType = "7">
          </BreakpointContent>

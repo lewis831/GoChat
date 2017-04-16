@@ -49,12 +49,16 @@ PODS:
   - GTMSessionFetcher/Core (1.1.8)
   - GTMSessionFetcher/Full (1.1.8):
     - GTMSessionFetcher/Core (= 1.1.8)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
 
 DEPENDENCIES:
   - Firebase
   - Firebase/Auth
   - Firebase/Core
   - GoogleSignIn
+  - JSQMessagesViewController
 
 SPEC CHECKSUMS:
   Firebase: 53b2343db1ebfa3eb16bdb4318b8bb65360b2220
@@ -69,7 +73,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
 
-PODFILE CHECKSUM: edc93e707e7280461b715a7c2c2f52bc7836f68d
+PODFILE CHECKSUM: 765dbe134b0fe894b4c1bc5c68e082765030e7d1
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.1.1
