@@ -40,6 +40,10 @@ class ChatViewController: JSQMessagesViewController {
     //Function for attachment button functionality
     override func didPressAccessoryButton(_ sender: UIButton!) {
         print("didPressAccessoryButton")
+        //Sending photos feature
+        let imagePicker = UIImagePickerController()
+        //Fixed line: http://stackoverflow.com/questions/38449014/cannot-call-value-of-non-function-type-uiviewcontroller
+        self.present(imagePicker, animated: true, completion: nil)
     }
     
     //Small note NSIndexPath is now just IndexPath in Swift 3
@@ -112,4 +116,14 @@ class ChatViewController: JSQMessagesViewController {
     }
     */
 
+}
+
+extension ChatViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("did finish picking")
+        //Get the image
+        //messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))
+        //collectionView.reloadData()
+        
+    }
 }
