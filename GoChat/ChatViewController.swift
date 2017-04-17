@@ -9,6 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 import MobileCoreServices
+import AVKit
 
 //Changed UI view from UIViewController to JSQMessagesViewController
 class ChatViewController: JSQMessagesViewController {
@@ -118,6 +119,20 @@ class ChatViewController: JSQMessagesViewController {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         return cell
     }
+    
+    //Checks whether it's a video or picture message so it can be played
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
+        print("didTapMessageBubbleAt: \(indexPath.item)")
+        let message = messages[indexPath.item]
+        if message.isMediaMessage {
+            if let mediaItem = message.media as? JSQVideoMediaItem {
+                let player = AVPlayer(url: mediaItem.fileURL)
+                let playerViewController = AVPlayerViewController()
+                playerViewController.player = player
+                self.present(playerViewController, animated: true, completion: nil)
+            }
+        }
+    }
         
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -160,9 +175,14 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         print("did finish picking")
         //Get the image
         print(info)
-        let picture = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if let picture = info[UIImagePickerControllerOriginalImage] as? UIImage {
         let photo = JSQPhotoMediaItem(image: picture)
         messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: photo))
+        }
+        else if let video = info[UIImagePickerControllerMediaURL] as? URL {
+            let videoItem = JSQVideoMediaItem(fileURL: video, isReadyToPlay: true)
+            messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: videoItem))
+        }
         self.dismiss(animated: true, completion: nil)
         collectionView.reloadData()
         
