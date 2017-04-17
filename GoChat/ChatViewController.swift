@@ -8,6 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
+import MobileCoreServices
 
 //Changed UI view from UIViewController to JSQMessagesViewController
 class ChatViewController: JSQMessagesViewController {
@@ -40,10 +41,45 @@ class ChatViewController: JSQMessagesViewController {
     //Function for attachment button functionality
     override func didPressAccessoryButton(_ sender: UIButton!) {
         print("didPressAccessoryButton")
+        
+        //Feature selects media to be sent
+        let sheet = UIAlertController(title: "Media Message", message: "Please select a media", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (alert: UIAlertAction) in
+            
+        }
+        
+        let photoLibrary = UIAlertAction(title: "Photo Library", style: UIAlertActionStyle.default) { (alert: UIAlertAction) in
+            //Check getMediaFrom() function to understand what this line does
+            self.getMediaFrom(type: kUTTypeImage)
+        }
+        
+        let videoLibrary = UIAlertAction(title: "Video Library", style: UIAlertActionStyle.default) { (alert: UIAlertAction) in
+            //Check getMediaFrom() function to understand what this line does
+            self.getMediaFrom(type: kUTTypeMovie)
+        }
+        
+        sheet.addAction(photoLibrary)
+        sheet.addAction(videoLibrary)
+        sheet.addAction(cancel)
+        self.present(sheet, animated: true, completion: nil)
+        
+        
         //Sending photos feature
-        let imagePicker = UIImagePickerController()
+        //let imagePicker = UIImagePickerController()
+        //To get this line to work I added to ChatViewController at the bottom UINavigationControllerDelegate
+        //imagePicker.delegate = self
         //Fixed line: http://stackoverflow.com/questions/38449014/cannot-call-value-of-non-function-type-uiviewcontroller
-        self.present(imagePicker, animated: true, completion: nil)
+        //Note to get the image picker to work I went to file Info.plist and added Key Privacy - Photo Library Usage Description as Type string
+        //self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    //Get media from function to pull media data to be sent
+    func getMediaFrom(type: CFString) {
+        print(type)
+        let mediaPicker = UIImagePickerController()
+        mediaPicker.delegate = self
+        mediaPicker.mediaTypes = [type as String]
+        self.present(mediaPicker, animated: true, completion: nil)
     }
     
     //Small note NSIndexPath is now just IndexPath in Swift 3
@@ -118,12 +154,17 @@ class ChatViewController: JSQMessagesViewController {
 
 }
 
-extension ChatViewController: UIImagePickerControllerDelegate {
+//This extension handles the sending of the photo and video attachments
+extension ChatViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("did finish picking")
         //Get the image
-        //messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))
-        //collectionView.reloadData()
+        print(info)
+        let picture = info[UIImagePickerControllerOriginalImage] as? UIImage
+        let photo = JSQPhotoMediaItem(image: picture)
+        messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: photo))
+        self.dismiss(animated: true, completion: nil)
+        collectionView.reloadData()
         
     }
 }
