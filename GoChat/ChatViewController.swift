@@ -10,6 +10,7 @@ import UIKit
 import JSQMessagesViewController
 import MobileCoreServices
 import AVKit
+import FirebaseDatabase
 
 //Changed UI view from UIViewController to JSQMessagesViewController
 class ChatViewController: JSQMessagesViewController {
@@ -17,7 +18,8 @@ class ChatViewController: JSQMessagesViewController {
     //Encodes inputs into message objects
     var messages = [JSQMessage]()
     
-
+    var messageRef = FIRDatabase.database().reference().child("messages")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,17 +28,49 @@ class ChatViewController: JSQMessagesViewController {
         self.senderDisplayName = "lewis831"
 
         // Do any additional setup after loading the view.
+        
+        //Checks if data is being sent into database
+        //messageRef.childByAutoId().setValue("first message")
+        //messageRef.childByAutoId().setValue("second message")
+        
+        //Retrieves data from Firebase database
+        //messageRef.observe(FIRDataEventType.value) { (snapshot: FIRDataSnapshot) in
+        //    print("text")
+        //    if let dict = snapshot.value as? NSDictionary {
+        //        print(dict)
+        //    }
+        //}
+        observeMessages()
+    }
+    
+    //Function to push data into Firebase DB
+    func observeMessages() {
+        messageRef.observe(.childAdded, with: { snapshot in
+            //print(snapshot.value as Any)
+            if let dict = snapshot.value as? [String: AnyObject] {
+                let MediaType = dict["MediaType"] as! String
+                let senderId = dict["MediaType"] as! String
+                let senderName = dict["MediaType"] as! String
+                let text = dict["MediaType"] as! String
+                
+                self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
+                self.collectionView.reloadData()
+            }
+        })
     }
     
     //Function for Send button functionality
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        print("didPressSendButton")
-        print("\(text)")
-        print(senderId)
-        print(senderDisplayName)
-        messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))
-        collectionView.reloadData()
-        print(messages)
+        
+        
+        
+        //messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))
+        //collectionView.reloadData()
+        //print(messages)
+        
+        let newMessage = messageRef.childByAutoId()
+        let messageData = ["text": text, "senderId": senderId, "senderName": senderDisplayName, "MediaType": "TEXT"]
+        newMessage.setValue(messageData)
     }
     
     //Function for attachment button functionality
