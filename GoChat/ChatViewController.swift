@@ -50,24 +50,39 @@ class ChatViewController: JSQMessagesViewController {
         messageRef.observe(.childAdded, with: { snapshot in
             //print(snapshot.value as Any)
             if let dict = snapshot.value as? [String: AnyObject] {
-                let MediaType = dict["MediaType"] as! String
+                let mediaType = dict["MediaType"] as! String
                 let senderId = dict["senderId"] as! String
                 let senderName = dict["senderName"] as! String
                 
-                print(dict)
-                
-                if let text = dict["text"] as? String {
-                self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
-                } else {
-                    //Picture media data in Firebase
-                    let fileURL = dict["fileURL"] as! String
-                    let data = NSData(contentsOf: URL(string: fileURL)!)
-                    let picture = UIImage(data: data! as Data)
-                    let photo = JSQPhotoMediaItem(image: picture)
-                    self.messages.append(JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: photo))
+                switch mediaType {
+                    
+                    case "TEXT":
+                        //Text media data in Firebase
+                        let text = dict["text"] as? String
+                        self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
+                            
+                    case "PHOTO":
+                            
+                        //Picture media data in Firebase
+                        let fileURL = dict["fileURL"] as! String
+                        let data = NSData(contentsOf: URL(string: fileURL)!)
+                        let picture = UIImage(data: data! as Data)
+                        let photo = JSQPhotoMediaItem(image: picture)
+                        self.messages.append(JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: photo))
+                            
+                    case "VIDEO":
+                        //Video media data in Firebase    
+                        let fileURL = dict["fileURL"] as! String
+                        let video = URL(string: fileURL)
+                        let videoItem = JSQVideoMediaItem(fileURL: video, isReadyToPlay: true)
+                        self.messages.append(JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: videoItem))
+                            
+                    default:
+                        print("unknown data type")
                 }
                 
                 self.collectionView.reloadData()
+                    
             }
         })
     }
