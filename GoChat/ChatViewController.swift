@@ -71,7 +71,8 @@ class ChatViewController: JSQMessagesViewController {
                         self.messages.append(JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: photo))
                             
                     case "VIDEO":
-                        //Video media data in Firebase    
+                        
+                        //Video media data in Firebase
                         let fileURL = dict["fileURL"] as! String
                         let video = URL(string: fileURL)
                         let videoItem = JSQVideoMediaItem(fileURL: video, isReadyToPlay: true)
