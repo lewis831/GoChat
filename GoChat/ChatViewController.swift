@@ -11,6 +11,8 @@ import JSQMessagesViewController
 import MobileCoreServices
 import AVKit
 import FirebaseDatabase
+import FirebaseStorage
+import FirebaseAuth
 
 //Changed UI view from UIViewController to JSQMessagesViewController
 class ChatViewController: JSQMessagesViewController {
@@ -202,16 +204,23 @@ class ChatViewController: JSQMessagesViewController {
 
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //Handles sending media whether pictuer or video
+    func sendMedia(picture: UIImage?, video: URL?) {
+        print(picture as Any)
+        print(FIRStorage.storage().reference())
+        let filePath = "\(FIRAuth.auth()!.currentUser!)/\(Date.timeIntervalSinceReferenceDate)"
+        print(filePath)
+        let data = UIImageJPEGRepresentation(picture!, 1)
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpg"
+        print(FIRStorage.storage().reference().child(filePath).put(data!, metadata: metadata, completion: { (metadata, error) in
+            if error != nil {
+            print(error?.localizedDescription as Any)
+            }
+            print(metadata as Any)
+            return
+        }))
     }
-    */
-
 }
 
 //This extension handles the sending of the photo and video attachments
@@ -223,10 +232,12 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         if let picture = info[UIImagePickerControllerOriginalImage] as? UIImage {
         let photo = JSQPhotoMediaItem(image: picture)
         messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: photo))
+            sendMedia(picture: picture, video: nil)
         }
         else if let video = info[UIImagePickerControllerMediaURL] as? URL {
             let videoItem = JSQVideoMediaItem(fileURL: video, isReadyToPlay: true)
             messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: videoItem))
+            sendMedia(picture: nil, video: video)
         }
         self.dismiss(animated: true, completion: nil)
         collectionView.reloadData()
