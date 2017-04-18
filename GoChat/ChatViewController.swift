@@ -204,22 +204,51 @@ class ChatViewController: JSQMessagesViewController {
 
     }
 
-    //Handles sending media whether pictuer or video
+    //Handles sending media whether picture or video
+    //Stores this media data such as picture or video in Firebase storage
     func sendMedia(picture: UIImage?, video: URL?) {
         print(picture as Any)
         print(FIRStorage.storage().reference())
-        let filePath = "\(FIRAuth.auth()!.currentUser!)/\(Date.timeIntervalSinceReferenceDate)"
-        print(filePath)
-        let data = UIImageJPEGRepresentation(picture!, 1)
-        let metadata = FIRStorageMetadata()
-        metadata.contentType = "image/jpg"
-        print(FIRStorage.storage().reference().child(filePath).put(data!, metadata: metadata, completion: { (metadata, error) in
-            if error != nil {
-            print(error?.localizedDescription as Any)
-            }
-            print(metadata as Any)
-            return
-        }))
+        if let picture = picture {
+            let filePath = "\(FIRAuth.auth()!.currentUser!)/\(Date.timeIntervalSinceReferenceDate)"
+            print(filePath)
+            //Compresses picture file to 0.1 or 10% of original file size
+            let data = UIImageJPEGRepresentation(picture, 0.1)
+            let metadata = FIRStorageMetadata()
+            //Image file type will be uploaded as jpg
+            metadata.contentType = "image/jpg"
+            print(FIRStorage.storage().reference().child(filePath).put(data!, metadata: metadata, completion: { (metadata, error) in
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                    return
+                }
+                let fileURL = metadata!.downloadURLs![0].absoluteString
+                
+                let newMessage = self.messageRef.childByAutoId()
+                let messageData = ["fileURL": fileURL, "senderId": self.senderId, "senderName": self.senderDisplayName, "MediaType": "PHOTO"]
+                newMessage.setValue(messageData)
+                
+            }))
+        } else if let video = video {
+            let filePath = "\(FIRAuth.auth()!.currentUser!)/\(Date.timeIntervalSinceReferenceDate)"
+            print(filePath)
+            //Compresses picture file to 0.1 or 10% of original file size
+            let data = NSData(contentsOf: video)
+            let metadata = FIRStorageMetadata()
+            //Video file type will be uploaded as mp4
+            metadata.contentType = "video/mp4"
+            print(FIRStorage.storage().reference().child(filePath).put(data! as Data, metadata: metadata, completion: { (metadata, error) in
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                    return
+                }
+                let fileURL = metadata!.downloadURLs![0].absoluteString
+                
+                let newMessage = self.messageRef.childByAutoId()
+                let messageData = ["fileURL": fileURL, "senderId": self.senderId, "senderName": self.senderDisplayName, "MediaType": "VIDEO"]
+                newMessage.setValue(messageData)
+            }))
+        }
     }
 }
 
