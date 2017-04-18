@@ -43,17 +43,28 @@ class ChatViewController: JSQMessagesViewController {
         observeMessages()
     }
     
-    //Function to push data into Firebase DB
+    //Function to push and pull data from and to Firebase database
     func observeMessages() {
         messageRef.observe(.childAdded, with: { snapshot in
             //print(snapshot.value as Any)
             if let dict = snapshot.value as? [String: AnyObject] {
                 let MediaType = dict["MediaType"] as! String
-                let senderId = dict["MediaType"] as! String
-                let senderName = dict["MediaType"] as! String
-                let text = dict["MediaType"] as! String
+                let senderId = dict["senderId"] as! String
+                let senderName = dict["senderName"] as! String
                 
+                print(dict)
+                
+                if let text = dict["text"] as? String {
                 self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
+                } else {
+                    //Picture media data in Firebase
+                    let fileURL = dict["fileURL"] as! String
+                    let data = NSData(contentsOf: URL(string: fileURL)!)
+                    let picture = UIImage(data: data! as Data)
+                    let photo = JSQPhotoMediaItem(image: picture)
+                    self.messages.append(JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: photo))
+                }
+                
                 self.collectionView.reloadData()
             }
         })
