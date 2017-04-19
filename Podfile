@@ -12,6 +12,7 @@ target 'GoChat' do
     pod 'JSQMessagesViewController'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
+    pod 'SDWebImage'
   # Pods for GoChat
 
 end

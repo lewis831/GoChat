@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="rd8-xX-bnQ">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="4jv-uQ-FQ5" customClass="LoginViewController" customModule="GoChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInVC" id="4jv-uQ-FQ5" customClass="LoginViewController" customModule="GoChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SxT-JM-nuW"/>
                         <viewControllerLayoutGuide type="bottom" id="Ryk-yT-NOe"/>

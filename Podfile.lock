@@ -63,6 +63,9 @@ PODS:
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
 
 DEPENDENCIES:
   - Firebase
@@ -72,6 +75,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - JSQMessagesViewController
+  - SDWebImage
 
 SPEC CHECKSUMS:
   Firebase: 53b2343db1ebfa3eb16bdb4318b8bb65360b2220
@@ -90,7 +94,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: de9c81f0651d8d5ead36a0d5146ad6e5d419e25e
+PODFILE CHECKSUM: b86f5219585edf184b09afece1ceb98479bfb534
 
 COCOAPODS: 1.2.0
