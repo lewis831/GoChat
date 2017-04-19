@@ -25,8 +25,10 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //Chat view needs senderId and senderDisplayName to work
-        self.senderId = "1"
+        let currentUser = FIRAuth.auth()?.currentUser
+        self.senderId = currentUser!.uid
         self.senderDisplayName = "lewis831"
 
         // Do any additional setup after loading the view.
@@ -69,7 +71,17 @@ class ChatViewController: JSQMessagesViewController {
                         let picture = UIImage(data: data! as Data)
                         let photo = JSQPhotoMediaItem(image: picture)
                         self.messages.append(JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: photo))
+                        
+                        if self.senderId == senderId {
                             
+                            photo?.appliesMediaViewMaskAsOutgoing = true
+                                
+                            } else {
+                                
+                            photo?.appliesMediaViewMaskAsOutgoing = false
+                                
+                            }
+                    
                     case "VIDEO":
                         
                         //Video media data in Firebase
@@ -77,7 +89,17 @@ class ChatViewController: JSQMessagesViewController {
                         let video = URL(string: fileURL)
                         let videoItem = JSQVideoMediaItem(fileURL: video, isReadyToPlay: true)
                         self.messages.append(JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: videoItem))
+                    
+                        if self.senderId == senderId {
                             
+                            videoItem?.appliesMediaViewMaskAsOutgoing = true
+                            
+                        } else {
+                            
+                            videoItem?.appliesMediaViewMaskAsOutgoing = false
+                            
+                        }
+                    
                     default:
                         print("unknown data type")
                 }
@@ -156,11 +178,20 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     //Function to display message bubbles 
-    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) ->JSQMessageBubbleImageDataSource! {
+        let message = messages[indexPath.item]
         let bubbleFactory = JSQMessagesBubbleImageFactory()
+        if message.senderId == self.senderId {
+            //Outgoing message bubble
+            //Style the messages text box bubble color I used was blue
+            return bubbleFactory!.outgoingMessagesBubbleImage(with: .black)
+        } else {
+            //Incoming message bubble
+            //Style the messages text box bubble color I used was blue
+            return bubbleFactory!.incomingMessagesBubbleImage(with: .blue)
+        }
         
-        //Style the messages text box bubble color I used was blue
-        return bubbleFactory?.outgoingMessagesBubbleImage(with: .blue)
+        
     }
     
     //This displays little circle for user avatar that appears next to message text box bubble
