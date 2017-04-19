@@ -100,6 +100,9 @@ class ChatViewController: JSQMessagesViewController {
         let newMessage = messageRef.childByAutoId()
         let messageData = ["text": text, "senderId": senderId, "senderName": senderDisplayName, "MediaType": "TEXT"]
         newMessage.setValue(messageData)
+        
+        //Clears text field after message is sent
+        self.finishSendingMessage()
     }
     
     //Function for attachment button functionality
@@ -284,15 +287,16 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         //Get the image
         print(info)
         if let picture = info[UIImagePickerControllerOriginalImage] as? UIImage {
-        let photo = JSQPhotoMediaItem(image: picture)
-        messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: photo))
+            
             sendMedia(picture: picture, video: nil)
+            
         }
         else if let video = info[UIImagePickerControllerMediaURL] as? URL {
-            let videoItem = JSQVideoMediaItem(fileURL: video, isReadyToPlay: true)
-            messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: videoItem))
+        
             sendMedia(picture: nil, video: video)
+            
         }
+        
         self.dismiss(animated: true, completion: nil)
         collectionView.reloadData()
         
