@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import FirebaseAuth
 
 //Added GIDSignInUIDelegate to fix error related to GoogleSignIn
 //Error: Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'uiDelegate must either be a |UIViewController| or implement the |signIn:presentViewController:| and |signIn:dismissViewController:| methods from |GIDSignInUIDelegate|.'
@@ -37,6 +38,23 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         
+    }
+    
+    //Signs them in automatically if they where logged in when they last exited the app
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(FIRAuth.auth()?.currentUser as Any)
+        
+        //Helps the app monitor user authentication status
+        FIRAuth.auth()?.addStateDidChangeListener({ (auth: FIRAuth, user: FIRUser?) in
+            if user != nil {
+                print(user as Any)
+                //Switch view making a call to func switchToNavigationViewController found in Helper.swift
+                Helper.helper.switchToNavigationViewController()
+            } else {
+                print("Unauthorized")
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

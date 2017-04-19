@@ -205,6 +205,15 @@ class ChatViewController: JSQMessagesViewController {
     @IBAction func logoutDidTapped(_ sender: Any) {
         //Important note of what this code does: Anonymously log user out and switch view to login page
         
+        //Signout method that logs you out
+        //The catch let error helps it logout making it less likley to crash if it throws an error upon logout
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch let error {
+            print(error)
+        }
+        
+    
         //Create a main storyboard instance
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         

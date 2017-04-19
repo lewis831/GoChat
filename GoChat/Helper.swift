@@ -58,7 +58,7 @@ class Helper {
         })
     }
     
-    private func switchToNavigationViewController() {
+    func switchToNavigationViewController() {
         //Create a main storyboard instance
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
