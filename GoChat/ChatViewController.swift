@@ -76,14 +76,17 @@ class ChatViewController: JSQMessagesViewController {
                 let mediaType = dict["MediaType"] as! String
                 let senderId = dict["senderId"] as! String
                 let senderName = dict["senderName"] as! String
+                //let startTime = CFAbsoluteTimeGetCurrent()
                 
                 self.observeUsers(senderId)
+                
                 switch mediaType {
                     
                 case "TEXT":
                     
                     let text = dict["text"] as! String
                     self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
+                    //print("Text message: \(CFAbsoluteTimeGetCurrent() - startTime)")
                     
                 case "PHOTO":
              
@@ -98,6 +101,7 @@ class ChatViewController: JSQMessagesViewController {
                     })
                     
                     self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, media: photo))
+                    //print("Photo message: \(CFAbsoluteTimeGetCurrent() - startTime)")
                     
                     if self.senderId == senderId {
                         photo?.appliesMediaViewMaskAsOutgoing = true
@@ -112,6 +116,7 @@ class ChatViewController: JSQMessagesViewController {
                     let video = URL(string: fileUrl)!
                     let videoItem = JSQVideoMediaItem(fileURL: video, isReadyToPlay: true)
                     self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, media: videoItem))
+                    //print("Video message: \(CFAbsoluteTimeGetCurrent() - startTime)")
                     
                     if self.senderId == senderId {
                         videoItem?.appliesMediaViewMaskAsOutgoing = true
