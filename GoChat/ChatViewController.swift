@@ -15,10 +15,11 @@ import FirebaseStorage
 import FirebaseAuth
 import SDWebImage
 class ChatViewController: JSQMessagesViewController {
+    
     var messages = [JSQMessage]()
     var avatarDict = [String: JSQMessagesAvatarImage]()
     var messageRef = FIRDatabase.database().reference().child("messages")
-    //    let photoCache = NSCache()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,13 +62,11 @@ class ChatViewController: JSQMessagesViewController {
             let image = UIImage(data: data!)
             let userImg = JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
             self.avatarDict[messageId] = userImg
-            self.collectionView.reloadData()
             
         } else {
             avatarDict[messageId] = JSQMessagesAvatarImageFactory.avatarImage(with: UIImage(named: "profileImage"), diameter: 30)
-            collectionView.reloadData()
         }
-        
+        collectionView.reloadData()
     }
     
     func observeMessages() {
@@ -87,23 +86,7 @@ class ChatViewController: JSQMessagesViewController {
                     self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
                     
                 case "PHOTO":
-                    //                    var photo = JSQPhotoMediaItem(image: nil)
-                    //                    let fileUrl = dict["fileUrl"] as! String
-                    //
-                    //                    if let cachedPhoto = self.photoCache.objectForKey(fileUrl) as? JSQPhotoMediaItem {
-                    //                        photo = cachedPhoto
-                    //                        self.collectionView.reloadData()
-                    //                    } else {
-                    //                        dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), {
-                    //                            let data = NSData(contentsOfURL: NSURL(string: fileUrl)!)
-                    //                            dispatch_async(dispatch_get_main_queue(), {
-                    //                                let image = UIImage(data: data!)
-                    //                                photo.image = image
-                    //                                self.collectionView.reloadData()
-                    //                                self.photoCache.setObject(photo, forKey: fileUrl)
-                    //                            })
-                    //                        })
-                    //                    }
+             
                     let photo = JSQPhotoMediaItem(image: nil)
                     let fileUrl = dict["fileUrl"] as! String
                     let downloader = SDWebImageDownloader.shared()
@@ -339,3 +322,6 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         
     }
 }
+
+
+

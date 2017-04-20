@@ -10,6 +10,7 @@ import Foundation
 import FirebaseAuth
 import UIKit
 import GoogleSignIn
+import FirebaseDatabase
 
 class Helper {
     static let helper = Helper()
@@ -20,11 +21,16 @@ class Helper {
         //switch view by setting navigation controller as root view controller
         
         //Anonymous user authetication with Firebase
-        FIRAuth.auth()?.signInAnonymously(completion: { (anonymousUser, error) in
+        FIRAuth.auth()?.signInAnonymously(completion: { (anonymousUser: FIRUser?, error: Error?) in
             if error == nil {
                 //Displays UserId in console
                 print("UserId: \(anonymousUser!.uid)")
                 
+                //User data
+                let newUser = FIRDatabase.database().reference().child("users").child(anonymousUser!.uid)
+                newUser.setValue(["displayname" : "anonymous", "id" : "\(anonymousUser!.uid)",
+                    "profileUrl": ""])
+
                 //Calling code function 'switchToNavigationViewController()' found below
                 self.switchToNavigationViewController()
                 
@@ -40,17 +46,27 @@ class Helper {
     //If working correctly the following should be displayed in the console:
     //Optional("lewisrashe831@gmail.com")
     //Optional("Lewis Benji")
-
-    func logInWithGoogle(authentication: GIDAuthentication) {
+    
+    //google avatar pulled from here
+    func logInWithGoogle(_ authentication: GIDAuthentication) {
+        
         let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         
-        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+        
+        FIRAuth.auth()?.signIn(with: credential, completion: { (user: FIRUser?, error: Error?) in
             if error != nil {
                 print(error!.localizedDescription)
                 return
+
             } else {
                 print(user?.email as Any)
                 print(user?.displayName as Any)
+                print(user?.photoURL as Any)
+                
+                //User data
+                let newUser = FIRDatabase.database().reference().child("users").child(user!.uid)
+                newUser.setValue(["displayname" : "\(user!.displayName!)", "id" : "\(user!.uid)",
+                    "profileUrl": "\(user!.photoURL!)"])
                 
                 //Calling code function 'switchToNavigationViewController()' found below
                 self.switchToNavigationViewController()

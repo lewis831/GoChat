@@ -89,7 +89,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         print(user.authentication)
             
         //Calling code found in Helper.swift file
-        Helper.helper.logInWithGoogle(authentication: user.authentication)
+        Helper.helper.logInWithGoogle(user.authentication)
     }
     
     /*
