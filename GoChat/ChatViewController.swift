@@ -89,12 +89,17 @@ class ChatViewController: JSQMessagesViewController {
                     //print("Text message: \(CFAbsoluteTimeGetCurrent() - startTime)")
                     
                 case "PHOTO":
-             
+                    
+                    //Faster and easier than grand central dispatch which can be hard to use
+                    //Link to this GitHub resource: https://github.com/lewis831/SDWebImage
+                    //Uses import SDWebImage
                     let photo = JSQPhotoMediaItem(image: nil)
                     let fileUrl = dict["fileUrl"] as! String
                     let downloader = SDWebImageDownloader.shared()
                     downloader.downloadImage(with: URL(string: fileUrl)!, options: [], progress: nil, completed: { (image, data, error, finished) in
+                        print(Thread())
                         DispatchQueue.main.async(execute: {
+                            let image = UIImage(data: data!)
                             photo?.image = image
                             self.collectionView.reloadData()
                         })
