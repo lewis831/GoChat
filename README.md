@@ -7,3 +7,9 @@ I made this app entirely from scratch learning how to do it from watching videos
 Anyways if you are interested in iOS app development or in learning it download this source code I have plenty of comments in there if you have any questions shoot me an email at lewisrashe831@gmail.com or go to my website at www.lewisrashe.com and message me there.
 
 Will add the iTunes download link as soon as version 1.0 gets posted.
+
+To learn more and start developing your own iOS apps download Xcode the offical Apple SDK: https://developer.apple.com/xcode/
+----------
+
+LICENSE MIT
+---------
