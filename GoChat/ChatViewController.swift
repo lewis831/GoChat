@@ -14,7 +14,6 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 import SDWebImage
-
 class ChatViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
     var avatarDict = [String: JSQMessagesAvatarImage]()
@@ -71,7 +70,6 @@ class ChatViewController: JSQMessagesViewController {
         
     }
     
-    //Bug regarding how sent and recieved messages where displayed where found in this function problem has been resolved
     func observeMessages() {
         messageRef.observe(.childAdded, with: { snapshot in
             // print(snapshot.value)
@@ -263,7 +261,6 @@ class ChatViewController: JSQMessagesViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         // From main storyboard instantiate a View controller
-        //To connect this code go to Main.storyboard -> Login View Controller -> identity inspector -> Storyboard ID -> enter value: "LogInVC"
         let LogInVC = storyboard.instantiateViewController(withIdentifier: "LogInVC") as! LoginViewController
         
         // Get the app delegate
@@ -274,10 +271,10 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     func sendMedia(_ picture: UIImage?, video: URL?) {
-        print(picture)
+        print(picture as Any)
         print(FIRStorage.storage().reference())
         if let picture = picture {
-            let filePath = "\(FIRAuth.auth()!.currentUser)/\(Date.timeIntervalSinceReferenceDate)"
+            let filePath = "\(String(describing: FIRAuth.auth()!.currentUser))/\(Date.timeIntervalSinceReferenceDate)"
             print(filePath)
             let data = UIImageJPEGRepresentation(picture, 0.1)
             let metadata = FIRStorageMetadata()
@@ -285,7 +282,7 @@ class ChatViewController: JSQMessagesViewController {
             FIRStorage.storage().reference().child(filePath).put(data!, metadata: metadata) { (metadata, error)
                 in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription as Any)
                     return
                 }
                 
@@ -298,7 +295,7 @@ class ChatViewController: JSQMessagesViewController {
             }
             
         } else if let video = video {
-            let filePath = "\(FIRAuth.auth()!.currentUser)/\(Date.timeIntervalSinceReferenceDate)"
+            let filePath = "\(String(describing: FIRAuth.auth()!.currentUser))/\(Date.timeIntervalSinceReferenceDate)"
             print(filePath)
             let data = try? Data(contentsOf: video)
             let metadata = FIRStorageMetadata()
@@ -306,7 +303,7 @@ class ChatViewController: JSQMessagesViewController {
             FIRStorage.storage().reference().child(filePath).put(data!, metadata: metadata) { (metadata, error)
                 in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription as Any)
                     return
                 }
                 
