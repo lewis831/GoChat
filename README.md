@@ -6,7 +6,7 @@ I made this app entirely from scratch learning how to do it from watching videos
 
 Anyways if you are interested in iOS app development or in learning it download this source code I have plenty of comments in there if you have any questions shoot me an email at lewisrashe831@gmail.com or go to my website at www.lewisrashe.com and message me there.
 
-Will add the iTunes download link as soon as version 1.0 gets posted. Currently still in the process of working on getting the app approved because it allows for "User Generated Content" there are specific requirements for getting the app approved and posted on the Apple App Store.
+Will add the iTunes download link as soon as version 1.0 gets posted. Currently still in the process of working on getting the app approved because it allows for "User Generated Content" there are specific requirements for getting the app approved and posted on the Apple App Store in the case of such apps.
 
 "To resolve this issue, please revise your app to implement all of the following precautions:
 
