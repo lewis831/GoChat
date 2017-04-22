@@ -5,7 +5,6 @@ iOS chat app with Firebase authentication and database backend. This is a fully 
 <tr>
     <td> <img src="https://www.dropbox.com/s/tyn05lkauk8ga64/UNADJUSTEDNONRAW_thumb_62e.jpg?raw=1" alt="Drawing" width="300" height="450" /> </td>
     <td> <img src="https://www.dropbox.com/s/tyn05lkauk8ga64/UNADJUSTEDNONRAW_thumb_62e.jpg?raw=1" alt="Drawing" width="300" height="450" /> </td>
-    <td> <img src="https://www.dropbox.com/s/tyn05lkauk8ga64/UNADJUSTEDNONRAW_thumb_62e.jpg?raw=1" alt="Drawing" width="300" height="450" /> </td>
 </tr>
 
 I made this app entirely from scratch learning how to do it from watching videos online and learning how to use Xcode, Firebase, cocoapods and the JSQMessagesViewController library. Hope to make more apps like this of ever increasing quality as I get better at it.
