@@ -2,7 +2,10 @@ Title: GoChat, Type: Native iOS Xcode app in Swift with Cocoapods, Author: Lewis
 ----------
 iOS chat app with Firebase authentication and database backend. This is a fully working chat app which allows you to send and receive texts, pictures and videos from other users of the app. I originally named the app GoChat but because of conflicts with uploading the app to the iTunes store as that name was taken I renamed it LChat. Some additional work is necessary to get it past Apple App Store approval as it features "User Generated Content", for more information check the README file. If you want to install the working version you can download the source code found here and install it through Xcode or msg me so I can send you a working beta.
 
-I made this app entirely from scratch learning how to do it from watching videos online and learning how to use Xcode, Firebase and cocoapods. Hope to make more apps like this of ever increasing quality as I get better at it.
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+
+I made this app entirely from scratch learning how to do it from watching videos online and learning how to use Xcode, Firebase, cocoapods and the JSQMessagesViewController library. Hope to make more apps like this of ever increasing quality as I get better at it.
 
 Anyways if you are interested in iOS app development or in learning it download this source code I have plenty of comments in there if you have any questions shoot me an email at lewisrashe831@gmail.com or go to my website at www.lewisrashe.com and message me there.
 
