@@ -14,6 +14,7 @@ import FirebaseDatabase
 import FirebaseStorage
 import FirebaseAuth
 import SDWebImage
+
 class ChatViewController: JSQMessagesViewController {
     
     var messages = [JSQMessage]()
